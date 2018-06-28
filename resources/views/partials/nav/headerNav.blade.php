@@ -14,10 +14,10 @@
 					<div class="nav-outer">
 						<ul class="nav navbar-nav">
 							<li class="active dropdown yamm-fw">
-								<a href="/index.php/home" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+								<a href="{{ url('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
 							</li>
 							<li class="dropdown yamm mega-menu">
-								<a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Clothing</a>
+								<a href="{{ url('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Clothing</a>
 				                <ul class="dropdown-menu container">
 									<li>
 							            <div class="yamm-content">
@@ -199,21 +199,21 @@
 											<div class="row">
 												<div class="col-xs-12 col-menu">
 					                                <ul class="links">
-					                                  	<li><a href="/index.php/home">Home</a></li>
-														<li><a href="/index.php/category">Category</a></li>
-														<li><a href="/index.php/detail">Detail</a></li>
-														<li><a href="/index.php/shopping-cart">Shopping Cart Summary</a></li>
-				                                        <li><a href="/index.php/checkout">Checkout</a></li>
-														<li><a href="/index.php/blog">Blog</a></li>
-														<li><a href="/index.php/blog-details">Blog Detail</a></li>
-														<li><a href="/index.php/contact">Contact</a></li>
-				                                        <li><a href="/index.php/sign-in">Sign In</a></li>
-														<li><a href="/index.php/my-wishlist">Wishlist</a></li>
-														<li><a href="/index.php/terms-conditions">Terms and Condition</a></li>
-														<li><a href="/index.php/track-orders">Track Orders</a></li>
-														<li><a href="/index.php/product-comparison">Product-Comparison</a></li>
-					                                  	<li><a href="/index.php/faq">FAQ</a></li>
-														<li><a href="/index.php/404">404</a></li>	
+					                                  	<li><a href="{{ url('home') }}">Home</a></li>
+														<li><a href="{{ url('category') }}">Category</a></li>
+														<li><a href="{{ url('detail') }}">Detail</a></li>
+														<li><a href="{{ url('shopping-cart') }}">Shopping Cart Summary</a></li>
+				                                        <li><a href="{{ url('checkout') }}">Checkout</a></li>
+														<li><a href="{{ url('blog') }}">Blog</a></li>
+														<li><a href="{{ url('blog-details') }}">Blog Detail</a></li>
+														<li><a href="{{ url('contact') }}">Contact</a></li>
+				                                        <li><a href="{{ url('sign-in') }}">Sign In</a></li>
+														<li><a href="{{ url('my-wishlist') }}">Wishlist</a></li>
+														<li><a href="{{ url('terms-conditions') }}">Terms and Condition</a></li>
+														<li><a href="{{ url('track-orders') }}">Track Orders</a></li>
+														<li><a href="{{ url('product-comparison') }}">Product-Comparison</a></li>
+					                                  	<li><a href="{{ url('faq') }}">FAQ</a></li>
+														<li><a href="{{ url('404') }}">404</a></li>	
 					                                </ul>
 												</div>
 											</div>
