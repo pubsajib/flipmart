@@ -29,3 +29,7 @@ Route::get('/terms-conditions', function () { return view('pages.terms-condition
 Route::get('/track-orders', function () { return view('pages.track-orders'); });
 Route::get('/', function () {return view('pages.home'); });
 // Route::get('/', function () {return view('welcome'); });
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

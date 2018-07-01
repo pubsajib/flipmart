@@ -9,7 +9,7 @@
 				<div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
 					<!-- ============================================================= LOGO ============================================================= -->
 <div class="logo">
-	<a href="{{ url('home') }}">
+	<a href="index.php/home">
 		<img src="{{ URL::asset('assets/images/logo.png')}}" alt="">
 	</a>
 </div><!-- /.logo -->
