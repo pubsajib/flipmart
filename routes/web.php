@@ -27,6 +27,7 @@ Route::get('/shopping-cart', function () { return view('pages.shopping-cart'); }
 Route::get('/sign-in', function () { return view('pages.sign-in'); });
 Route::get('/terms-conditions', function () { return view('pages.terms-conditions'); });
 Route::get('/track-orders', function () { return view('pages.track-orders'); });
+Route::get('/admin', function () { return view('admin.tables'); });
 Route::get('/', function () {return view('pages.home'); });
 // Route::get('/', function () {return view('welcome'); });
 
