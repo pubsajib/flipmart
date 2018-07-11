@@ -1,7 +1,10 @@
 @extends('layouts.admin')
 @section('content')
 <div id="wrapper">
-    @include('admin.partials.sidebar')
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        @include('admin.partials.topbar')
+        @include('admin.partials.sidebar')
+    </nav>
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">

@@ -27,10 +27,14 @@ Route::get('/shopping-cart', function () { return view('pages.shopping-cart'); }
 Route::get('/sign-in', function () { return view('pages.sign-in'); });
 Route::get('/terms-conditions', function () { return view('pages.terms-conditions'); });
 Route::get('/track-orders', function () { return view('pages.track-orders'); });
-Route::get('/admin', function () { return view('admin.tables'); });
+// Route::group(array('prefix' => 'foo'), function(){})
+Route::group(array('prefix' => 'backdoor'), function(){
+	Route::get('/', function () { return view('admin.tables'); });
+	Route::resource('products','ProductController');
+});
 Route::get('/', function () {return view('pages.home'); });
-// Route::get('/', function () {return view('welcome'); });
 
 Auth::routes();
 
+// Route::get('/', function () {return view('welcome'); });
 // Route::get('/home', 'HomeController@index')->name('home');

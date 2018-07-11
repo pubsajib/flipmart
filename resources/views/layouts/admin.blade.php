@@ -12,22 +12,22 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{ URL::asset('admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="{{ URL::asset('admin/vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('backend/vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="{{ URL::asset('admin/vendor/datatables-plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('backend/vendor/datatables-plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="{{ URL::asset('admin/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('backend/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{ URL::asset('admin/dist/css/sb-admin-2.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('backend/dist/css/sb-admin-2.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{ URL::asset('admin/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('backend/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,21 +42,21 @@
 	@yield('content')
 
     <!-- jQuery -->
-    <script src="{{ URL::asset('admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('backend/vendor/jquery/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ URL::asset('admin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('backend/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{ URL::asset('admin/vendor/metisMenu/metisMenu.min.js') }}"></script>
+    <script src="{{ URL::asset('backend/vendor/metisMenu/metisMenu.min.js') }}"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="{{ URL::asset('admin/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ URL::asset('admin/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
-    <script src="{{ URL::asset('admin/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
+    <script src="{{ URL::asset('backend/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ URL::asset('backend/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('backend/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="{{ URL::asset('admin/dist/js/sb-admin-2.js') }}"></script>
+    <script src="{{ URL::asset('backend/dist/js/sb-admin-2.js') }}"></script>
     @yield('scripts')
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

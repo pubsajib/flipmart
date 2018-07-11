@@ -16,6 +16,9 @@
 							<li class="active dropdown yamm-fw">
 								<a href="{{ url('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
 							</li>
+							<li class="active dropdown yamm-fw">
+								<a href="{{ url('admin') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
+							</li>
 							<li class="dropdown yamm mega-menu">
 								<a href="{{ url('home') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Clothing</a>
 				                <ul class="dropdown-menu container">
