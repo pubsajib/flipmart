@@ -2,6 +2,20 @@
 @section('styles')
     <link href="{{ URL::asset('backend/vendor/datatables-plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('backend/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
+    <style type="text/css">
+        .actionIcons {
+            width: 100px;
+            padding: 0;
+            vertical-align: middle !important;
+        }
+        .actionIcons i {
+            font-size: 20px;
+            vertical-align: middle;
+            padding: 3px;
+            margin: 0 1px;
+            cursor: pointer;
+        }
+    </style>
 @endsection
 @section('content')
 <div id="page-wrapper">
@@ -43,7 +57,12 @@
                                             <td class="text-center">{{ $product->regular_price }}</td>
                                         @endif
                                         <td class="text-center">{{ $product->status }}</td>
-                                        <td class="text-center">XXXXXX</td>
+                                        <td class="text-center actionIcons">
+                                            <a href="{{ route('products.show', $product->id) }}"><i class="fa fa-eye text-primary"></i></a>
+                                            <a href="{{ route('products.edit', $product->id) }}"><i class="fa fa-edit text-warning"></i></a>
+                                            <a href="{{ route('products.destroy', [$product->id]) }}"><i class="fa fa-trash-o fa-lg text-danger"></i></a>
+                                            <a href="{{ route('products.destroy', $product->id) }}"><i class="fa fa-trash-o fa-lg text-danger"></i></a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

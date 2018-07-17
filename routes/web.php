@@ -27,6 +27,7 @@ Route::get('/shopping-cart', function () { return view('pages.shopping-cart'); }
 Route::get('/sign-in', function () { return view('pages.sign-in'); });
 Route::get('/terms-conditions', function () { return view('pages.terms-conditions'); });
 Route::get('/track-orders', function () { return view('pages.track-orders'); });
+Route::get('/login', function () { return view('pages.sign-in'); });
 // Route::group(array('prefix' => 'foo'), function(){})
 Route::group(array('prefix' => 'backdoor'), function(){
 	Route::get('/', function () { return view('admin.tables'); });

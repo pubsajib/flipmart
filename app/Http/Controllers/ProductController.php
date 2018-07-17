@@ -26,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        dd([1,2,2,3,4,4,4,4]);
+        echo "string";
     }
 
     /**
@@ -53,7 +53,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        echo "Show";
+        dd($product);
     }
 
     /**
@@ -64,7 +65,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        echo "Edit";
     }
 
     /**
@@ -87,6 +88,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        echo "Destroy";
     }
 }
