@@ -15,8 +15,8 @@ class ProductController extends Controller
     public function index()
     {
         // show all products
-        $products = Products::all();
-        dd($products);
+        $products = Product::all();
+        return view('products.index', compact('products'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        dd([1,2,2,3,4,4,4,4]);
     }
 
     /**
