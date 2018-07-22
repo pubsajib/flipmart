@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-class ProductsTableSeeder extends Seeder
+class CategoriesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -9,6 +9,6 @@ class ProductsTableSeeder extends Seeder
      */
     public function run() 
     {
-        factory('App\Product', 10)->create();
+        factory('App\Category', 2)->create();
     }
 }

@@ -15,13 +15,19 @@
             margin: 0 1px;
             cursor: pointer;
         }
+        .createNewBtn{
+            position: absolute;
+    right: 30px;
+    bottom: 33px;
+        }
     </style>
 @endsection
 @section('content')
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Products</h1>
+            <h1 class="page-header ">Products</h1>
+            <a href="{{ route('products.create') }}" role="button" class="btn btn-primary btn-md createNewBtn">Create New</a>
         </div>
     </div>
     <div class="row">
@@ -61,7 +67,6 @@
                                             <a href="{{ route('products.show', $product->id) }}"><i class="fa fa-eye text-primary"></i></a>
                                             <a href="{{ route('products.edit', $product->id) }}"><i class="fa fa-edit text-warning"></i></a>
                                             <a href="{{ route('products.destroy', [$product->id]) }}"><i class="fa fa-trash-o fa-lg text-danger"></i></a>
-                                            <a href="{{ route('products.destroy', $product->id) }}"><i class="fa fa-trash-o fa-lg text-danger"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

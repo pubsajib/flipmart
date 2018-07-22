@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Services\Slug;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -26,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        echo "string";
+        return view('products.create');
     }
 
     /**
@@ -40,9 +41,19 @@ class ProductController extends Controller
         // Validate
 
         // Store
+        $slug = new Slug;
         $product = new Product;
         $product->title = $request->title;
+        $product->slug = $slug->createSlug($request->title);
+        $product->body = $request->body;
+        $product->category =$request->category;
+        $product->image = $request->image;
+        $product->regular_price = $request->regular_price;
+        $product->sales_price = $request->sales_price;
+        $product->save();
+
         // Redirect
+        return redirect()->route('products.show', $product->id)->with('success', 'Created successfully.');
     }
 
     /**
@@ -53,8 +64,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        echo "Show";
-        dd($product);
+        return view('products.show', compact($product));
     }
 
     /**

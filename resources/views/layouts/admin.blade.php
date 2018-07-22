@@ -29,6 +29,7 @@
             @include('admin.partials.topbar')
             @include('admin.partials.sidebar')
         </nav>
+        @include('partials.message')
         @yield('content')
     </div>
     <!-- jQuery -->
