@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use App\Services\Slug;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -27,7 +29,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+    	$categories = Category::where('status', 'active')->get();
+        return view('products.create', compact('categories'));
     }
 
     /**
@@ -41,16 +44,21 @@ class ProductController extends Controller
         // Validate
 
         // Store
+	    $user = new User;
+	    if (auth()->check()){
+		    $user->user_id = 1;
+	    }
         $slug = new Slug;
         $product = new Product;
         $product->title = $request->title;
         $product->slug = $slug->createSlug($request->title);
         $product->body = $request->body;
         $product->category =$request->category;
-        $product->image = $request->image;
-        $product->regular_price = $request->regular_price;
-        $product->sales_price = $request->sales_price;
-        $product->save();
+	    $product->regular_price = $request->regular_price;
+	    $product->sales_price = $request->sales_price;
+	    $product->image = $request->image;
+	    $product->user_id = 1;
+	    $product->save();
 
         // Redirect
         return redirect()->route('products.show', $product->id)->with('success', 'Created successfully.');

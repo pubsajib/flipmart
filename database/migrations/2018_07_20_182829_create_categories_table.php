@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('parent');
+	        $table->enum('status', ['active', 'inactive', 'trash'])->default('active');
             $table->timestamps();
         });
     }

@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('image')->nullable();
             $table->float('regular_price')->default(0);
             $table->float('sales_price')->default(0);
+            $table->integer('user_id');
             // $table->integer('gallery')->nullable();
             $table->enum('status', ['active', 'inactive', 'trash'])->default('active');
             $table->timestamps();

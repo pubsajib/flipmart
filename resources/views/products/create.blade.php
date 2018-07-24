@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="row">
-        <form action="{{ route('products.store') }}" method="POST" role="form">
+        <form action="{{ route('products.store') }}" method="POST" role="form" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="col-md-8">
                 <div class="form-group">
@@ -25,17 +25,25 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
             <div class="col-md-4 well">
+                @if(!$categories->isEmpty())
+                    <div class="form-group">
+                        <select name="category" id="category" class="form-control">
+                            <option value="">select category</option>
+                                @foreach($categories as $category   )
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                        </select>
+                    </div>
+                @endif
                 <div class="form-group">
-                    <input type="text" class="form-control" id="category" name="category" placeholder="category">
+                    <input type="number" class="form-control" id="regular_price" name="regular_price" placeholder="regular_price">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="image" name="image" placeholder="image">
+                    <input type="number" class="form-control" id="sales_price" name="sales_price" placeholder="sales_price">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="regular_price" name="regular_price" placeholder="regular_price">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="sales_price" name="sales_price" placeholder="sales_price">
+                    <input type="file" name="image" id="image" class="form-control">
+                    <div class="imageHolder" style="max-height: 100px; max-width: 100px; width: auto; height: auto;"></div>
                 </div>
             </div>
         </form>

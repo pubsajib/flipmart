@@ -11,6 +11,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'image' => '',
         'regular_price' => 10.00,
         'sales_price' => 8.00,
+        'user_id' => 1,
         'created_at' => date('Y-m-d H:i:s'),
         'updated_at' => date('Y-m-d H:i:s'),
     ];
