@@ -7,6 +7,8 @@ use App\Product;
 use App\Services\Slug;
 use App\User;
 use Illuminate\Http\Request;
+use Image;
+use File;
 
 class ProductController extends Controller
 {
@@ -41,23 +43,34 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate
-
-        // Store
+    	// Required objects
+	    $slug = new Slug;
 	    $user = new User;
-	    if (auth()->check()){
-		    $user->user_id = 1;
-	    }
-        $slug = new Slug;
-        $product = new Product;
+	    if (auth()->check()) $user->id = 1;
+
+	    // Validate
+
+	    // Store
+	    $product = new Product;
         $product->title = $request->title;
         $product->slug = $slug->createSlug($request->title);
         $product->body = $request->body;
         $product->category =$request->category;
 	    $product->regular_price = $request->regular_price;
 	    $product->sales_price = $request->sales_price;
-	    $product->image = $request->image;
-	    $product->user_id = 1;
+	    //$product->image = $request->image;
+	    $product->user_id = $user->id;
+
+	    if ($request->hasFile('image')) {
+	    	$image = $request->file('image');
+	    	$imageName = $image->getClientOriginalName() .'-'. time();
+	    	$imageFull = $imageName .'-full.'. $image->getClientOriginalExtension();
+	    	$image50X50 = $imageName .'-50X50.'. $image->getClientOriginalExtension();
+		    Image::make($image)->resize(800, 400)->save($imageFull);
+		    Image::make($image)->resize(50, 50)->save($image50X50);
+
+		    $product->image = $imageFull;
+	    }
 	    $product->save();
 
         // Redirect

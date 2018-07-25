@@ -29,8 +29,13 @@
             @include('admin.partials.topbar')
             @include('admin.partials.sidebar')
         </nav>
-        @include('partials.message')
-        @yield('content')
+        <div id="page-wrapper">
+            @include('partials.message')
+            @include('admin.partials.title')
+            <div class="row">
+                @yield('content')
+            </div>
+        </div>
     </div>
     <!-- jQuery -->
     <script src="{{ URL::asset('backend/vendor/jquery/jquery.min.js') }}"></script>
