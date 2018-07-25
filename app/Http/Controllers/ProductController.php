@@ -85,6 +85,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        dd('show');
         return view('products.show', compact($product));
     }
 
@@ -120,5 +121,9 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         echo "Destroy";
+        $post = Post::find($id);
+        // $post->delete();
+        // Redirect after delete
+        return redirect()->route('products.index')->with('success', 'Deleted successfully');
     }
 }
