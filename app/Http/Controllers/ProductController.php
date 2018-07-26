@@ -8,7 +8,6 @@ use App\Services\Slug;
 use App\User;
 use Illuminate\Http\Request;
 use Image;
-use File;
 
 class ProductController extends Controller
 {
@@ -59,22 +58,26 @@ class ProductController extends Controller
 	    $product->regular_price = $request->regular_price;
 	    $product->sales_price = $request->sales_price;
 	    //$product->image = $request->image;
-	    $product->user_id = $user->id;
+	    $product->user_id =1;
 
 	    if ($request->hasFile('image')) {
 	    	$image = $request->file('image');
-	    	$imageName = $image->getClientOriginalName() .'-'. time();
+	    	$location = public_path('images/products/');
+	    	$imageName = getFileName($image->getClientOriginalName(), $image->getClientOriginalExtension()) .'-'. time();
 	    	$imageFull = $imageName .'-full.'. $image->getClientOriginalExtension();
 	    	$image50X50 = $imageName .'-50X50.'. $image->getClientOriginalExtension();
-		    Image::make($image)->resize(800, 400)->save($imageFull);
-		    Image::make($image)->resize(50, 50)->save($image50X50);
+		    //Image::make($image)->resize(800, 400)->save($imageFull);
+		    //Image::make($image)->resize(50, 50)->save($image50X50);
+		    Image::make($image)->resize(50, 50)->save($location.$image50X50);
+		    Image::make($image)->resize(800, 600)->save($location.$imageFull);
 
 		    $product->image = $imageFull;
 	    }
 	    $product->save();
 
         // Redirect
-        return redirect()->route('products.show', $product->id)->with('success', 'Created successfully.');
+        return redirect()->back();
+        //return redirect()->route('products.show', $product->id)->with('success', 'Created successfully.');
     }
 
     /**

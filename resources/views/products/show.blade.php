@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="row">
-        {{ $product->title }}
+        title
     </div>
 </div>
 @endsection
